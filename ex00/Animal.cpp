@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 01:44:33 by jow               #+#    #+#             */
-/*   Updated: 2025/10/24 15:37:27 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/25 01:18:47 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ Animal& Animal::operator=(const Animal &other)
 	return (*this);
 }
 
-Animal::Animal(std::string _type) : type(_type) {}
+Animal::Animal(std::string _type) : type(_type)
+{
+	std::cout << "Animal parametized constructor called" << std::endl;
+}
 
 std::string Animal::getType() const
 {
