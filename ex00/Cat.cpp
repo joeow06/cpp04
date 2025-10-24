@@ -6,13 +6,13 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 01:54:00 by jow               #+#    #+#             */
-/*   Updated: 2025/10/24 02:19:46 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/24 15:35:16 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal("Cat")
 {
 	std::cout << "Cat default constructor called" << std::endl;
 }

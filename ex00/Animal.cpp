@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 01:44:33 by jow               #+#    #+#             */
-/*   Updated: 2025/10/24 02:19:52 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/24 15:37:27 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ std::string Animal::getType() const
 
 void Animal::makeSound() const
 {
-	std::cout << "Animal is not set yet" << std::endl;
+	std::cout << "Unknown has no sound..." << std::endl;
 }
