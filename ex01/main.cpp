@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 01:40:06 by jow               #+#    #+#             */
-/*   Updated: 2025/10/25 01:52:06 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/25 14:09:23 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,19 @@ int main()
 
 	std::cout << "\n---------- Testing Dog Deep Copies ----------" << std::endl;
 	Dog deep;
+	deep.getBrain()->setIdeas("Im a dog and i love barking!");
 	Dog deepdeep = deep;
+	std::cout << "Deep's idea is " << deep.getBrain()->getIdeas() << std::endl;
+	std::cout << "Deepdeep's idea is " << deepdeep.getBrain()->getIdeas() << std::endl;
 	std::cout << "Memory address for deep's brain is: " << deep.getBrain() << std::endl;
-	std::cout << "Memory address for deepdeep's brain is: " << deepdeep.getBrain() << std::endl; 
-	
+	std::cout << "Memory address for deepdeep's brain is: " << deepdeep.getBrain() << std::endl;
+
 	std::cout << "\n---------- Testing Cat Deep Copies ----------" << std::endl;
 	Cat meow;
+	meow.getBrain()->setIdeas("Im a cat and i love meowing!");
 	Cat deepMeow= meow;
+	std::cout << "meow's idea is " << meow.getBrain()->getIdeas() << std::endl;
+	std::cout << "deepMeow's idea is " << deepMeow.getBrain()->getIdeas() << std::endl;
 	std::cout << "Memory address for deep's brain is: " << meow.getBrain() << std::endl;
 	std::cout << "Memory address for deepdeep's brain is: " << deepMeow.getBrain() << std::endl;  
 	

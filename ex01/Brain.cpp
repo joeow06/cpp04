@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 00:58:08 by jow               #+#    #+#             */
-/*   Updated: 2025/10/25 01:40:02 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/25 13:53:17 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,14 @@ Brain& Brain::operator=(const Brain &other)
 	}
 	std::cout << "Brain assignment operator called" << std::endl;
 	return (*this);
+}
+
+void Brain::setIdeas(std::string idea)
+{
+	ideas[0] = idea;
+}
+
+std::string Brain::getIdeas() const
+{
+	return (ideas[0]);
 }
