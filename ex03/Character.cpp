@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 22:55:28 by jow               #+#    #+#             */
-/*   Updated: 2025/10/26 02:18:37 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/26 02:27:31 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ void Character::equip(AMateria *m)
 				itemCount++;
 				std::cout << "Character " << this->getName() << " equipped " 
 							<< m->getType() << std::endl;
-				delete m;
 				return ;
 			}
 		}
