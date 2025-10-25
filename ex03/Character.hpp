@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 22:56:58 by jow               #+#    #+#             */
-/*   Updated: 2025/10/26 00:53:52 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/26 01:05:34 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "ICharacter.hpp"
 # include "Floor.hpp"
+# include "AMateria.hpp"
 
 class Character : public ICharacter
 {
