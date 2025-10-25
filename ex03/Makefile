@@ -16,7 +16,7 @@ INCLUDES    = -I$(INC_DIR)
 RM          = rm -rf
 
 # Output file name
-NAME        = animal
+NAME        = main
 
 # Directories
 INC_DIR     = ./
