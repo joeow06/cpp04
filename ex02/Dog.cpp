@@ -6,13 +6,13 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 01:54:00 by jow               #+#    #+#             */
-/*   Updated: 2025/10/25 01:48:48 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/25 14:43:21 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog"), brain(new Brain)
+Dog::Dog() : AAnimal("Dog"), brain(new Brain)
 {
 	std::cout << "Dog default constructor called" << std::endl;
 }
@@ -23,7 +23,7 @@ Dog::~Dog()
 	std::cout << "Dog destructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other), brain(new Brain(*other.brain))
+Dog::Dog(const Dog &other) : AAnimal(other), brain(new Brain(*other.brain))
 {
 	std::cout << "Dog copy constructor called" << std::endl;
 }
@@ -32,7 +32,7 @@ Dog &Dog::operator=(const Dog &other)
 {
 	if (this != &other)
 	{
-		Animal::operator=(other);
+		AAnimal::operator=(other);
 		delete brain;
 		brain = new Brain(*other.brain);
 	}
