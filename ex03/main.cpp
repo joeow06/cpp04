@@ -44,7 +44,7 @@
 
 int main()
 {
-	std::cout << "---------- Init Materia Source ----------" << std::endl;
+	std::cout << "---------- Materia Source test----------" << std::endl;
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -59,6 +59,9 @@ int main()
 	
 	std::cout << "---------- \"me\" equips materia ----------" << std::endl;
 	AMateria* tmp;
+	tmp = src->createMateria("fire"); // unknown magic!
+	if (!tmp) // createMateria returns 0 if fail
+		std::cout << "Unknown Magic Detected!" << std::endl;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
@@ -69,9 +72,23 @@ int main()
 	me->equip(tmp);
 	tmp = src->createMateria("cure"); //5th materia will fail
 	me->equip(tmp);
+	me->equip(NULL);
+	delete tmp; // Delete materia that wasnt equipped to avoid mem leak
 	std::cout << std::endl;
 
-	std::cout << "---------- \"me\" unequip materia test ----------" << std::endl;
+	ICharacter* bob = new Character("bob");
+	
+	std::cout << "---------- \"me\" use test ----------" << std::endl;
+	me->use(0, *bob);
+	me->use(1, *bob);
+	me->use(2, *bob);
+	me->use(3, *bob);
+	me->use(42, *bob); 		//invalid
+	me->use(-123123, *bob); //invalid
+	me->use(4, *bob);		//invalid
+	std::cout << std::endl;
+
+	std::cout << "---------- \"me\" unequip test ----------" << std::endl;
 	me->unequip(0);
 	me->unequip(1);
 	me->unequip(2);
@@ -81,14 +98,25 @@ int main()
 	me->unequip(4242);
 	std::cout << std::endl;
 
-	
-	ICharacter* bob = new Character("bob");
-	
-	std::cout << "---------- \"me\" use materia test ----------" << std::endl;
+	std::cout << "---------- \"me\" use after unequip test ----------" << std::endl;
 	me->use(0, *bob);
 	me->use(1, *bob);
+	me->use(2, *bob);
+	me->use(3, *bob);
+	std::cout << std::endl;
 
-	
+	std::cout << "---------- \"me\" equip again test ----------" << std::endl;
+	AMateria* newTmp;
+	newTmp = src->createMateria("ice");
+	me->equip(newTmp);
+	newTmp = src->createMateria("cure");
+	me->equip(newTmp);
+	me->use(0, *bob);
+    me->use(1, *bob);
+    me->use(2, *bob);
+    me->use(3, *bob);
+	std::cout << std::endl;
+
 	delete bob;
 	delete me;
 	delete src;

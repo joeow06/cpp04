@@ -76,7 +76,7 @@ AMateria* MateriaSource::createMateria(std::string const &type)
 		if (materiaList[i]->getType() == type)
 			return (materiaList[i]->clone());
 	}
-	return NULL;
+	return 0;
 }
 
 int MateriaSource::getCount() const
