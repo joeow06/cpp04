@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:31:37 by jow               #+#    #+#             */
-/*   Updated: 2025/10/26 01:03:06 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/26 01:38:29 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,9 @@ AMateria::AMateria(std::string const & type) : _type(type) {}
 const std::string& AMateria::getType() const
 {
 	return (this->_type);
+}
+
+void AMateria::use(ICharacter& target)
+{
+	std::cout << "Unknown magic used on " << target.getName() << std::endl;
 }

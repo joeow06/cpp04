@@ -6,11 +6,12 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 00:19:30 by jow               #+#    #+#             */
-/*   Updated: 2025/10/26 00:37:36 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/26 01:31:19 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Floor.hpp"
+#include "AMateria.hpp"
 
 Floor::Floor() : head(NULL) {}
 

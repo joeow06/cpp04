@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:19:25 by jow               #+#    #+#             */
-/*   Updated: 2025/10/25 17:44:13 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/26 01:24:08 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class MateriaSource : public IMateriaSource
 {
 	private:
-		int index;
+		int count;
 		AMateria *materiaList[4];
 	public:
 		MateriaSource();
@@ -27,7 +27,9 @@ class MateriaSource : public IMateriaSource
 		MateriaSource& operator=(const MateriaSource &other);
 
 		void learnMateria(AMateria*);
-		AMateria* createMateria(std::string const &type); 
+		AMateria* createMateria(std::string const &type);
+		int getCount() const;
+		AMateria* getMateria(int i) const;
 } ;
 
 #endif

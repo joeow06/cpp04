@@ -25,7 +25,7 @@ OBJS_DIR    = bin
 
 # Source files
 SRCS_FILES  = main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp \
-				MateriaSource.cpp
+				MateriaSource.cpp Floor.cpp
 OBJS_FILES  = $(patsubst $(SRCS_DIR)%.cpp, $(OBJS_DIR)/%.o, $(SRCS_FILES))
 
 #------------------------------------------------------------------------------#

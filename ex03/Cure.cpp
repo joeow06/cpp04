@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 18:08:38 by jow               #+#    #+#             */
-/*   Updated: 2025/10/25 18:33:09 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/26 01:46:13 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ Cure::~Cure()
 
 Cure::Cure(const Cure &other) : AMateria("cure")
 {
-	*this = other;
+	(void) other;
 	std::cout << "Cure copy constructor called" << std::endl;
 }
 
 Cure& Cure::operator=(const Cure &other)
 {
-	this->_type = other._type;
+	(void) other;
 	std::cout << "Ice assignment operator called" << std::endl;
 	return (*this);
 }
@@ -42,5 +42,5 @@ AMateria* Cure::clone() const
 
 void Cure::use(ICharacter& target)
 {
-	(void) target;
+	std::cout << "* heals " << target.getName() << "'s wounds"<< std::endl;
 }
