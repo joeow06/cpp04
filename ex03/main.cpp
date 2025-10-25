@@ -117,9 +117,27 @@ int main()
     me->use(3, *bob);
 	std::cout << std::endl;
 
+	std::cout << "---------- character deep copy test ----------" << std::endl;
+    ICharacter* alice = new Character("alice");
+    tmp = src->createMateria("ice");
+    alice->equip(tmp);
+    tmp = src->createMateria("cure");
+    alice->equip(tmp);
+    
+    Character* aliceCopy = new Character(*(Character*)alice);
+    std::cout << "Original alice uses materia:" << std::endl;
+    alice->use(0, *bob);
+    alice->use(1, *bob);
+    std::cout << "Copied alice uses materia:" << std::endl;
+    aliceCopy->use(0, *bob);
+    aliceCopy->use(1, *bob);
+	std::cout << std::endl;
+
 	delete bob;
 	delete me;
 	delete src;
+	delete alice;
+	delete aliceCopy;
 	
 	return 0;
 }
