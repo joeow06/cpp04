@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:34:30 by jow               #+#    #+#             */
-/*   Updated: 2025/10/25 18:12:37 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/25 22:58:26 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Ice : public AMateria
 {
 	public:
 		Ice();
-		virtual ~Ice();
+		~Ice();
 		Ice(const Ice &other);
 		Ice& operator=(const Ice &other);
 

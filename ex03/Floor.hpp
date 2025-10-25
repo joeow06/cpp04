@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Floor.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 18:08:40 by jow               #+#    #+#             */
-/*   Updated: 2025/10/25 22:58:32 by jow              ###   ########.fr       */
+/*   Created: 2025/10/26 00:19:32 by jow               #+#    #+#             */
+/*   Updated: 2025/10/26 00:46:04 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define CURE_HPP
+#ifndef FLOOR_HPP
+#define FLOOR_HPP
 
-# include "AMateria.hpp"
+# include <iostream>
+//forward declare (prevent circular dependancy)
+class AMateria;
 
-class Cure : public AMateria
+class Floor
 {
-	public:
-		Cure();
-		~Cure();
-		Cure(const Cure &other);
-		Cure& operator=(const Cure &other);
+	private:
+		struct FloorNode
+		{
+			AMateria *floorTrash;
+			FloorNode *next;
+		} ;
+		FloorNode *head;
 
-		AMateria* clone() const;
-		void use(ICharacter& target);
+	public:
+		Floor();
+		~Floor();
+		Floor(const Floor &other);
+		Floor& operator=(const Floor &other);
+
+		void addToFloor(AMateria *trash);
+		void clearFloor();
 } ;
 
 #endif
