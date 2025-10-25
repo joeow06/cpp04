@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 15:19:14 by jow               #+#    #+#             */
-/*   Updated: 2025/10/25 17:45:10 by jow              ###   ########.fr       */
+/*   Created: 2025/10/25 18:08:38 by jow               #+#    #+#             */
+/*   Updated: 2025/10/25 18:10:19 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include "Cure.hpp"
 
-MateriaSource::MateriaSource() : index(0)
-{
-	std::cout << "MateriaSource default constructor called" << std::endl;
-}
+Cure::Cure() : AMateria("Cure") {}
 
-void MateriaSource::learnMateria(AMateria *materia)
+AMateria* Cure::clone() const
 {
-	if (index < 4)
-		materiaList[index] = materia->clone();
-	else
-		std::cout << "MateriaSource can know at most 4 Materias!" << std::endl;
-}
-
-AMateria* MateriaSource::createMateria(std::string const &type)
-{
-	
+	return new Cure(*this);
 }

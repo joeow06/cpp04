@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 15:19:14 by jow               #+#    #+#             */
-/*   Updated: 2025/10/25 17:45:10 by jow              ###   ########.fr       */
+/*   Created: 2025/10/25 18:08:40 by jow               #+#    #+#             */
+/*   Updated: 2025/10/25 18:18:09 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#ifndef CURE_HPP
+#define CURE_HPP
 
-MateriaSource::MateriaSource() : index(0)
-{
-	std::cout << "MateriaSource default constructor called" << std::endl;
-}
+# include "AMateria.hpp"
 
-void MateriaSource::learnMateria(AMateria *materia)
+class Cure : public AMateria
 {
-	if (index < 4)
-		materiaList[index] = materia->clone();
-	else
-		std::cout << "MateriaSource can know at most 4 Materias!" << std::endl;
-}
+	public:
+		Cure();
+		virtual ~Cure();
+		Cure(const Cure &other);
+		Cure& operator=(const Cure &other);
 
-AMateria* MateriaSource::createMateria(std::string const &type)
-{
-	
-}
+		AMateria* clone() const;
+		void use(ICharacter& target);
+} ;
+
+#endif

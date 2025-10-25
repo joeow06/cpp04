@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 15:19:14 by jow               #+#    #+#             */
-/*   Updated: 2025/10/25 17:45:10 by jow              ###   ########.fr       */
+/*   Created: 2025/10/25 15:34:30 by jow               #+#    #+#             */
+/*   Updated: 2025/10/25 18:12:37 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#ifndef ICE_HPP
+#define ICE_HPP
 
-MateriaSource::MateriaSource() : index(0)
-{
-	std::cout << "MateriaSource default constructor called" << std::endl;
-}
+#include "AMateria.hpp"
 
-void MateriaSource::learnMateria(AMateria *materia)
+class Ice : public AMateria
 {
-	if (index < 4)
-		materiaList[index] = materia->clone();
-	else
-		std::cout << "MateriaSource can know at most 4 Materias!" << std::endl;
-}
+	public:
+		Ice();
+		virtual ~Ice();
+		Ice(const Ice &other);
+		Ice& operator=(const Ice &other);
 
-AMateria* MateriaSource::createMateria(std::string const &type)
-{
-	
-}
+		AMateria* clone() const;
+		void use(ICharacter& target);
+} ;
+
+#endif

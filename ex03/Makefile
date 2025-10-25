@@ -24,8 +24,8 @@ SRCS_DIR    = ./
 OBJS_DIR    = bin
 
 # Source files
-SRCS_FILES  = main.cpp AAnimal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp \
-				WrongCat.cpp Brain.cpp
+SRCS_FILES  = main.cpp AMateria.cpp Cure.cpp Ice.cpp ICharacter.cpp \
+				MateriaSource.cpp
 OBJS_FILES  = $(patsubst $(SRCS_DIR)%.cpp, $(OBJS_DIR)/%.o, $(SRCS_FILES))
 
 #------------------------------------------------------------------------------#
