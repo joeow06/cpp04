@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 22:55:28 by jow               #+#    #+#             */
-/*   Updated: 2025/10/26 00:48:27 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/26 00:54:04 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ Character& Character::operator=(const Character &other)
 Character::Character(std::string name) 
 	: _name(name), inventory(), itemCount(0) {}
 
-const std::string& Character::getName() const
+std::string const & Character::getName() const
 {
 	return (this->_name);
 }

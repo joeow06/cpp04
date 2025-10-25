@@ -6,14 +6,15 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:09:08 by jow               #+#    #+#             */
-/*   Updated: 2025/10/25 15:10:39 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/26 00:54:46 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
-# include "AMateria.hpp"
+# include <iostream>
+class AMateria;
 
 class ICharacter
 {

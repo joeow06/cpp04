@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 22:56:58 by jow               #+#    #+#             */
-/*   Updated: 2025/10/26 00:47:14 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/26 00:53:52 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Character : public ICharacter
 		Character& operator=(const Character &other);
 
 		Character(std::string name);
-		const std::string& getName() const;
+		std::string const & getName() const;
 		void equip(AMateria *m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
