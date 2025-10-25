@@ -6,27 +6,25 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:31:37 by jow               #+#    #+#             */
-/*   Updated: 2025/10/25 18:05:40 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/26 01:03:06 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria() : _type("")
-{
-	
-}
+AMateria::AMateria() : _type("") {}
 
 AMateria::~AMateria() {}
 
 AMateria::AMateria(const AMateria &other)
 {
-	
+	this->_type = other._type;
 }
 
 AMateria& AMateria::operator=(const AMateria &other)
 {
-	
+	(void) other;
+	return (*this);
 }
 
 AMateria::AMateria(std::string const & type) : _type(type) {}
