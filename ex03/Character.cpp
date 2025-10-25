@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 22:55:28 by jow               #+#    #+#             */
-/*   Updated: 2025/10/26 00:54:04 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/26 02:18:37 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void Character::equip(AMateria *m)
 				itemCount++;
 				std::cout << "Character " << this->getName() << " equipped " 
 							<< m->getType() << std::endl;
+				delete m;
 				return ;
 			}
 		}
@@ -110,6 +111,8 @@ void Character::unequip(int idx)
 	inventory[idx] = NULL;
 	floor.addToFloor(trash);
 	itemCount--;
+	std::cout << "Character " << this->getName() << " unequiped slot " 
+				<< idx << std::endl;
 }
 
 void Character::use(int idx, ICharacter& target)
