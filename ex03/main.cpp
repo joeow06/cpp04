@@ -6,7 +6,7 @@
 /*   By: jow <jow@student.42kl.edu.my>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:14:07 by jow               #+#    #+#             */
-/*   Updated: 2025/10/26 02:21:33 by jow              ###   ########.fr       */
+/*   Updated: 2025/10/26 10:20:19 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ int main()
     tmp = src->createMateria("cure");
     alice->equip(tmp);
     
-    Character* aliceCopy = new Character(*(Character*)alice);
+    Character* aliceCopy = new Character(*(Character*)alice); 
     std::cout << "Original alice uses materia:" << std::endl;
     alice->use(0, *bob);
     alice->use(1, *bob);
@@ -132,6 +132,28 @@ int main()
     aliceCopy->use(0, *bob);
     aliceCopy->use(1, *bob);
 	std::cout << std::endl;
+
+	    std::cout << "\n---------- Character Deep Copy Test ----------" << std::endl;
+    Character original("Alice");
+    original.equip(new Ice());
+    original.equip(new Cure());
+    
+    Character copy = original; // copy constructor
+    Character assigned("Bob");
+    assigned = original; // assignment operator
+    
+    std::cout << "\nOriginal unequips all:" << std::endl;
+    original.unequip(0);
+    original.unequip(1);
+    
+    std::cout << "\nCopy still has materia:" << std::endl;
+    Character target("Target");
+    copy.use(0, target);
+    copy.use(1, target);
+    
+    std::cout << "\nAssigned still has materia:" << std::endl;
+    assigned.use(0, target);
+    assigned.use(1, target);
 
 	delete bob;
 	delete me;
